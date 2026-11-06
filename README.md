@@ -9,6 +9,8 @@ A 19-second vertical explainer, **"A day on Venus is longer than its year"**. It
 | Captions | **faster-whisper** 1.2.1 (`small`, int8, CPU): word timestamps → word-by-word ASS captions, plus an SRT | `scripts/make_captions.py` → `captions/` |
 | 3D | **Blender 4.5** through the Blender MCP (built and checked live), with the final render headless in EEVEE | `blender/build_scene.py` → `blender/venus-reel.blend` |
 | Assembly | ffmpeg | `scripts/assemble.sh` → `output/venus-reel.mp4`, `output/cover.jpg` |
+| Thumbnail | Pillow, using the sunrise frame and bold hook text, safe for the 3:4 grid crop | `scripts/make_thumbnail.py` → `output/thumbnail.jpg`, `output/thumbnail-grid-3x4.jpg` |
+| Caption | written by hand | `CAPTION.md`, `output/caption.txt` |
 
 ## Instagram Reels spec (verified with ffprobe and ebur128)
 
@@ -24,11 +26,14 @@ A 19-second vertical explainer, **"A day on Venus is longer than its year"**. It
 ~/.venvs/chatterbox/Scripts/python.exe scripts/make_voice.py      # ~3 min on CPU
 ~/.venvs/chatterbox/Scripts/python.exe scripts/join_voice.py
 ~/.venvs/faster-whisper/Scripts/python.exe scripts/make_captions.py
-"/c/Program Files/Blender Foundation/Blender 4.5/blender.exe" -b -P blender/build_scene.py   # or run it through the MCP
+"/c/Program Files/Blender Foundation/Blender 4.5/blender.exe" -b -P blender/build_scene.py   # builds and saves blender/venus-reel.blend (or run it through the MCP)
 "/c/Program Files/Blender Foundation/Blender 4.5/blender.exe" -b blender/venus-reel.blend -o "//frames/####" -F JPEG -a   # ~21 min
 bash scripts/assemble.sh
+~/.venvs/chatterbox/Scripts/python.exe scripts/make_thumbnail.py
 ```
 
 **Source:** NASA Science, Venus facts (https://science.nasa.gov/venus/venus-facts/). One spin takes about 243 Earth days and is retrograde (backwards). One orbit takes about 225 Earth days. The Sun would rise in the west.
 
-**Not published.** This is a private test repo; posting to Instagram needs the owner's go-ahead.
+**Download:** the video, thumbnail, caption and captions are on the [site](https://lorneh12.github.io/venus-fact-reel/) and attached to the [latest release](https://github.com/LorneH12/venus-fact-reel/releases/latest).
+
+The video hasn't been posted to Instagram.

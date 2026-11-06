@@ -171,3 +171,8 @@ ct.links.new(rl.outputs["Image"], gl.inputs["Image"]); ct.links.new(gl.outputs["
 sc.render.image_settings.file_format = "JPEG"; sc.render.image_settings.quality = 95
 sc.frame_set(1)
 print(f"scene built: {END} frames at {FPS} fps; segments {seg}")
+
+# headless build (`blender -b -P blender/build_scene.py`): save the .blend next to this script for the render step
+if bpy.app.background:
+    bpy.ops.wm.save_as_mainfile(filepath=str(HERE / "venus-reel.blend"))
+    print("saved", HERE / "venus-reel.blend")
