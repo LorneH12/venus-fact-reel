@@ -1,0 +1,4 @@
+blender/frames/
+voice/*.raw.wav
+*.blend1
+__pycache__/

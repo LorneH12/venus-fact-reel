@@ -1,0 +1,83 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Montserrat ExtraBold,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,7,3,5,60,140,0,1
+Style: Head,Montserrat Black,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H00000000,0,0,0,0,100,100,1,0,1,0,0,5,60,60,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:00.54,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}A {\c&HFFFFFF&}DAY {\c&HFFFFFF&}ON
+Dialogue: 1,0:00:00.54,0:00:00.72,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}A {\c&H3FD7FF&}DAY {\c&HFFFFFF&}ON
+Dialogue: 1,0:00:00.72,0:00:00.88,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}A {\c&HFFFFFF&}DAY {\c&H3FD7FF&}ON
+Dialogue: 1,0:00:00.88,0:00:01.08,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}VENUS {\c&HFFFFFF&}IS {\c&HFFFFFF&}LONGER
+Dialogue: 1,0:00:01.08,0:00:01.34,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}VENUS {\c&H3FD7FF&}IS {\c&HFFFFFF&}LONGER
+Dialogue: 1,0:00:01.34,0:00:01.58,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}VENUS {\c&HFFFFFF&}IS {\c&H3FD7FF&}LONGER
+Dialogue: 1,0:00:01.58,0:00:01.90,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}THAN {\c&HFFFFFF&}ITS {\c&HFFFFFF&}YEAR
+Dialogue: 1,0:00:01.90,0:00:02.06,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}THAN {\c&H3FD7FF&}ITS {\c&HFFFFFF&}YEAR
+Dialogue: 1,0:00:02.06,0:00:02.59,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}THAN {\c&HFFFFFF&}ITS {\c&H3FD7FF&}YEAR
+Dialogue: 1,0:00:02.80,0:00:03.06,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}VENUS {\c&HFFFFFF&}SPINS {\c&HFFFFFF&}SO
+Dialogue: 1,0:00:03.06,0:00:03.34,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}VENUS {\c&H3FD7FF&}SPINS {\c&HFFFFFF&}SO
+Dialogue: 1,0:00:03.34,0:00:03.60,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}VENUS {\c&HFFFFFF&}SPINS {\c&H3FD7FF&}SO
+Dialogue: 1,0:00:03.60,0:00:03.92,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}SLOWLY {\c&HFFFFFF&}THAT {\c&HFFFFFF&}ONE
+Dialogue: 1,0:00:03.92,0:00:04.14,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}SLOWLY {\c&H3FD7FF&}THAT {\c&HFFFFFF&}ONE
+Dialogue: 1,0:00:04.14,0:00:04.34,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}SLOWLY {\c&HFFFFFF&}THAT {\c&H3FD7FF&}ONE
+Dialogue: 1,0:00:04.34,0:00:04.50,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}TURN {\c&HFFFFFF&}ON {\c&HFFFFFF&}ITS
+Dialogue: 1,0:00:04.50,0:00:04.64,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}TURN {\c&H3FD7FF&}ON {\c&HFFFFFF&}ITS
+Dialogue: 1,0:00:04.64,0:00:04.78,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}TURN {\c&HFFFFFF&}ON {\c&H3FD7FF&}ITS
+Dialogue: 1,0:00:04.78,0:00:05.06,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}AXIS {\c&HFFFFFF&}TAKES {\c&HFFFFFF&}243
+Dialogue: 1,0:00:05.06,0:00:05.32,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}AXIS {\c&H3FD7FF&}TAKES {\c&HFFFFFF&}243
+Dialogue: 1,0:00:05.32,0:00:06.16,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}AXIS {\c&HFFFFFF&}TAKES {\c&H3FD7FF&}243
+Dialogue: 1,0:00:06.16,0:00:06.32,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}EARTH {\c&HFFFFFF&}DAYS
+Dialogue: 1,0:00:06.32,0:00:06.85,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}EARTH {\c&H3FD7FF&}DAYS
+Dialogue: 1,0:00:06.98,0:00:07.22,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}BUT {\c&HFFFFFF&}ONE {\c&HFFFFFF&}TRIP
+Dialogue: 1,0:00:07.22,0:00:07.40,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}BUT {\c&H3FD7FF&}ONE {\c&HFFFFFF&}TRIP
+Dialogue: 1,0:00:07.40,0:00:07.54,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}BUT {\c&HFFFFFF&}ONE {\c&H3FD7FF&}TRIP
+Dialogue: 1,0:00:07.54,0:00:07.78,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}AROUND {\c&HFFFFFF&}THE {\c&HFFFFFF&}SUN
+Dialogue: 1,0:00:07.78,0:00:07.92,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}AROUND {\c&H3FD7FF&}THE {\c&HFFFFFF&}SUN
+Dialogue: 1,0:00:07.92,0:00:08.14,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}AROUND {\c&HFFFFFF&}THE {\c&H3FD7FF&}SUN
+Dialogue: 1,0:00:08.14,0:00:08.46,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}TAKES {\c&HFFFFFF&}ONLY {\c&HFFFFFF&}ABOUT
+Dialogue: 1,0:00:08.46,0:00:08.66,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}TAKES {\c&H3FD7FF&}ONLY {\c&HFFFFFF&}ABOUT
+Dialogue: 1,0:00:08.66,0:00:08.92,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}TAKES {\c&HFFFFFF&}ONLY {\c&H3FD7FF&}ABOUT
+Dialogue: 1,0:00:08.92,0:00:10.35,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}225
+Dialogue: 1,0:00:10.56,0:00:10.80,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}AND {\c&HFFFFFF&}IT {\c&HFFFFFF&}SPINS
+Dialogue: 1,0:00:10.80,0:00:10.92,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}AND {\c&H3FD7FF&}IT {\c&HFFFFFF&}SPINS
+Dialogue: 1,0:00:10.92,0:00:11.12,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}AND {\c&HFFFFFF&}IT {\c&H3FD7FF&}SPINS
+Dialogue: 1,0:00:11.12,0:00:11.79,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}BACKWARDS
+Dialogue: 1,0:00:12.02,0:00:12.16,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}SO {\c&HFFFFFF&}IF {\c&HFFFFFF&}YOU
+Dialogue: 1,0:00:12.16,0:00:12.34,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}SO {\c&H3FD7FF&}IF {\c&HFFFFFF&}YOU
+Dialogue: 1,0:00:12.34,0:00:12.44,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}SO {\c&HFFFFFF&}IF {\c&H3FD7FF&}YOU
+Dialogue: 1,0:00:12.44,0:00:12.58,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}COULD {\c&HFFFFFF&}SEE {\c&HFFFFFF&}THROUGH
+Dialogue: 1,0:00:12.58,0:00:12.78,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}COULD {\c&H3FD7FF&}SEE {\c&HFFFFFF&}THROUGH
+Dialogue: 1,0:00:12.78,0:00:12.94,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}COULD {\c&HFFFFFF&}SEE {\c&H3FD7FF&}THROUGH
+Dialogue: 1,0:00:12.94,0:00:13.06,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}THE {\c&HFFFFFF&}CLOUDS
+Dialogue: 1,0:00:13.06,0:00:13.67,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}THE {\c&H3FD7FF&}CLOUDS
+Dialogue: 1,0:00:13.68,0:00:13.74,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}THE {\c&HFFFFFF&}SUN {\c&HFFFFFF&}WOULD
+Dialogue: 1,0:00:13.74,0:00:13.96,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}THE {\c&H3FD7FF&}SUN {\c&HFFFFFF&}WOULD
+Dialogue: 1,0:00:13.96,0:00:14.12,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}THE {\c&HFFFFFF&}SUN {\c&H3FD7FF&}WOULD
+Dialogue: 1,0:00:14.12,0:00:14.36,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}RISE {\c&HFFFFFF&}IN {\c&HFFFFFF&}THE
+Dialogue: 1,0:00:14.36,0:00:14.58,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}RISE {\c&H3FD7FF&}IN {\c&HFFFFFF&}THE
+Dialogue: 1,0:00:14.58,0:00:14.68,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}RISE {\c&HFFFFFF&}IN {\c&H3FD7FF&}THE
+Dialogue: 1,0:00:14.68,0:00:15.23,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}WEST
+Dialogue: 1,0:00:15.40,0:00:15.70,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}FOLLOW {\c&HFFFFFF&}FOR {\c&HFFFFFF&}MORE
+Dialogue: 1,0:00:15.70,0:00:15.88,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}FOLLOW {\c&H3FD7FF&}FOR {\c&HFFFFFF&}MORE
+Dialogue: 1,0:00:15.88,0:00:16.02,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}FOLLOW {\c&HFFFFFF&}FOR {\c&H3FD7FF&}MORE
+Dialogue: 1,0:00:16.02,0:00:16.34,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}FACTS {\c&HFFFFFF&}THAT {\c&HFFFFFF&}SOUND
+Dialogue: 1,0:00:16.34,0:00:16.54,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}FACTS {\c&H3FD7FF&}THAT {\c&HFFFFFF&}SOUND
+Dialogue: 1,0:00:16.54,0:00:16.76,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}FACTS {\c&HFFFFFF&}THAT {\c&H3FD7FF&}SOUND
+Dialogue: 1,0:00:16.76,0:00:17.16,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}FAKE
+Dialogue: 1,0:00:17.16,0:00:17.26,Cap,,0,0,0,,{\pos(500,1270)}{\fscx108\fscy108\t(0,90,\fscx100\fscy100)}{\c&H3FD7FF&}BUT {\c&HFFFFFF&}AREN'T
+Dialogue: 1,0:00:17.26,0:00:17.79,Cap,,0,0,0,,{\pos(500,1270)}{\c&HFFFFFF&}BUT {\c&H3FD7FF&}AREN'T
+Dialogue: 2,0:00:00.35,0:00:02.77,Head,,0,0,0,,{\pos(540,430)\fad(120,160)\fscx80\fscy80\t(0,160,\fscx100\fscy100)\3c&H101010&\bord0\shad0}1 DAY > 1 YEAR?
+Dialogue: 0,0:00:00.35,0:00:02.77,Head,,0,0,0,,{\an7\pos(0,0)\fad(120,160)\1c&H141414&\1a&H30&\bord0\shad0\p1}m 150 362 b 110 362 110 498 150 498 l 930 498 b 970 498 970 362 930 362{\p0}
+Dialogue: 2,0:00:02.82,0:00:07.06,Head,,0,0,0,,{\pos(540,430)\fad(120,160)\fscx80\fscy80\t(0,160,\fscx100\fscy100)\3c&H101010&\bord0\shad0}1 spin = 243 days
+Dialogue: 0,0:00:02.82,0:00:07.06,Head,,0,0,0,,{\an7\pos(0,0)\fad(120,160)\1c&H141414&\1a&H30&\bord0\shad0\p1}m 150 362 b 110 362 110 498 150 498 l 930 498 b 970 498 970 362 930 362{\p0}
+Dialogue: 2,0:00:07.11,0:00:10.63,Head,,0,0,0,,{\pos(540,430)\fad(120,160)\fscx80\fscy80\t(0,160,\fscx100\fscy100)\3c&H101010&\bord0\shad0}1 orbit = 225 days
+Dialogue: 0,0:00:07.11,0:00:10.63,Head,,0,0,0,,{\an7\pos(0,0)\fad(120,160)\1c&H141414&\1a&H30&\bord0\shad0\p1}m 150 362 b 110 362 110 498 150 498 l 930 498 b 970 498 970 362 930 362{\p0}
+Dialogue: 2,0:00:10.68,0:00:15.39,Head,,0,0,0,,{\pos(540,430)\fad(120,160)\fscx80\fscy80\t(0,160,\fscx100\fscy100)\3c&H101010&\bord0\shad0}Sunrise: WEST
+Dialogue: 0,0:00:10.68,0:00:15.39,Head,,0,0,0,,{\an7\pos(0,0)\fad(120,160)\1c&H141414&\1a&H30&\bord0\shad0\p1}m 150 362 b 110 362 110 498 150 498 l 930 498 b 970 498 970 362 930 362{\p0}

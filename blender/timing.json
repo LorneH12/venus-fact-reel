@@ -1,0 +1,36 @@
+{
+  "fps": 30,
+  "total": 19.218,
+  "segments": [
+    {
+      "id": "hook",
+      "start": 0.35,
+      "end": 2.516,
+      "onscreen": "1 DAY > 1 YEAR?"
+    },
+    {
+      "id": "spin",
+      "start": 2.816,
+      "end": 6.809,
+      "onscreen": "1 spin = 243 days"
+    },
+    {
+      "id": "orbit",
+      "start": 7.109,
+      "end": 10.376,
+      "onscreen": "1 orbit = 225 days"
+    },
+    {
+      "id": "back",
+      "start": 10.676,
+      "end": 15.145,
+      "onscreen": "Sunrise: WEST"
+    },
+    {
+      "id": "cta",
+      "start": 15.445,
+      "end": 17.618,
+      "onscreen": ""
+    }
+  ]
+}

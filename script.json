@@ -1,0 +1,14 @@
+{
+  "title": "A day on Venus is longer than its year",
+  "voice": "Chatterbox built-in default voice (no cloning)",
+  "lines": [
+    { "id": "hook",  "say": "A day on Venus is longer than its year.", "onscreen": "1 DAY > 1 YEAR?" },
+    { "id": "spin",  "say": "Venus spins so slowly that one turn on its axis takes two hundred and forty-three Earth days.", "onscreen": "1 spin = 243 days" },
+    { "id": "orbit", "say": "But one trip around the Sun takes only about two hundred and twenty-five.", "onscreen": "1 orbit = 225 days" },
+    { "id": "back",  "say": "And it spins backwards. So if you could see through the clouds, the Sun would rise in the west.", "onscreen": "Sunrise: WEST" },
+    { "id": "cta",   "say": "Follow for more facts that sound fake, but aren't.", "onscreen": "" }
+  ],
+  "sources": [
+    "NASA Science, Venus facts: sidereal rotation about 243 Earth days, retrograde; orbital period about 225 Earth days. https://science.nasa.gov/venus/venus-facts/"
+  ]
+}
