@@ -1,0 +1,42 @@
+{
+  "site_title": "Fact Reels",
+  "owner": "LorneH12",
+  "hub_repo": "LorneH12/fact-reels",
+  "hub_url": "https://lorneh12.github.io/fact-reels/",
+  "reels": [
+    {
+      "slug": "venus-fact-reel",
+      "title": "A day on Venus is longer than its year",
+      "hook": "One spin of Venus takes longer than its whole trip around the Sun.",
+      "category": "Space",
+      "date": "2026-11-06",
+      "duration_s": 19.2,
+      "status": "ready",
+      "base": "./",
+      "files": {
+        "video": "output/venus-reel.mp4",
+        "thumbnail": "output/thumbnail.jpg",
+        "grid": "output/thumbnail-grid-3x4.jpg",
+        "caption": "output/caption.txt",
+        "srt": "output/captions.srt"
+      },
+      "caption": "A day on Venus is longer than its year. 🪐\n\nVenus turns so slowly that one spin on its axis takes about 243 Earth days. One trip around the Sun takes only about 225.\n\nAnd it spins backwards. If you could see through its thick clouds, you'd watch the Sun rise in the west and set in the east.\n\nWhich fact got you: the day or the sunrise? 👇\n\nFollow for more facts that sound fake but aren't.\n\nSource: NASA Science, Venus facts.",
+      "hashtags": [
+        "space",
+        "venus",
+        "sciencefacts",
+        "astronomy",
+        "didyouknow"
+      ],
+      "alt_text": "A 3D-animated Venus with swirling pale-yellow clouds turns slowly in space, then is shown orbiting a glowing Sun before the Sun rises over its edge. Bold captions read \"1 day > 1 year?\", \"1 spin = 243 days\", \"1 orbit = 225 days\" and \"Sunrise: west\".",
+      "sources": [
+        {
+          "name": "NASA Science: Venus facts",
+          "url": "https://science.nasa.gov/venus/venus-facts/"
+        }
+      ],
+      "repo": "LorneH12/venus-fact-reel",
+      "posted": {}
+    }
+  ]
+}

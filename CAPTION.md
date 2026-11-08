@@ -26,9 +26,7 @@ A 3D-animated Venus with swirling pale-yellow clouds turns slowly in space, then
 
 ## Posting notes
 
-- **Format:** Reel, 1080 × 1920, 19 s. Upload `venus-reel.mp4`.
-- **Cover:** upload `thumbnail.jpg` (Edit cover > Add from camera roll). Its text sits inside the 3:4 profile-grid crop; `thumbnail-grid-3x4.jpg` shows how it looks on the grid.
-- **Captions:** they're burned into the video. `captions.srt` is there if you also want Instagram's own caption track.
-- **Hashtags:** five. Instagram now allows at most five per post, and fewer, relevant tags work best.
-- **Audio:** voice only, so there are no music rights to clear. You can add trending audio in the app at low volume under the voice.
-- **Facts:** checked against https://science.nasa.gov/venus/venus-facts/. The rotation is sidereal, about 243 Earth days and retrograde. The orbit is about 225 Earth days.
+- Upload `venus-reel.mp4` as a Reel. For the cover, add `thumbnail.jpg` from the camera roll; `thumbnail-grid-3x4.jpg` shows the profile-grid crop.
+- Captions are burned in; `captions.srt` is there if you want Instagram's own caption track too.
+- 5 hashtags (Instagram allows at most 5).
+- Sources: NASA Science: Venus facts (https://science.nasa.gov/venus/venus-facts/)

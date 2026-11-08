@@ -2,91 +2,385 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A day on Venus is longer than its year · Reel</title>
-<meta name="description" content="A 19-second vertical explainer Reel: a day on Venus is longer than its year. Video, cover, caption and captions to download.">
-<meta property="og:title" content="A day on Venus is longer than its year">
-<meta property="og:description" content="19-second vertical explainer Reel, ready for Instagram.">
-<meta property="og:image" content="output/thumbnail-grid-3x4.jpg">
-<meta property="og:type" content="video.other">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23e9cf98'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fact Reels</title>
+<meta name="description" content="Browse, watch, download and publish short fact videos.">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0f'/%3E%3Cpath d='M12 9l11 7-11 7z' fill='%23f5c542'/%3E%3C/svg%3E">
 <style>
-  html, body { background: #07080d; }
-  :root { --ink: #f3ead9; --muted: rgba(243, 234, 217, .72); --line: rgba(243, 234, 217, .14); --gold: #f2c55c; }
+  html, body { background: #0b0b0f; }
+  :root {
+    --bg: #0b0b0f; --panel: #16161c; --panel-2: #1f1f27; --ink: #f4f1ea; --muted: rgba(244, 241, 234, .7);
+    --dim: rgba(244, 241, 234, .5); --line: rgba(244, 241, 234, .12); --accent: #f5c542; --accent-ink: #1b1505;
+    --ok: #4cc38a; --radius: 10px; --ease: cubic-bezier(.22, 1, .36, 1);
+    --pad: clamp(16px, 4vw, 56px);
+  }
   * { box-sizing: border-box; }
-  body { margin: 0; color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 1040px; margin: 0 auto; padding: 48px 24px 72px; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 56px; align-items: start; }
-  h1 { font-size: clamp(30px, 4.4vw, 46px); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 12px; }
-  .lede { color: var(--muted); margin: 0 0 28px; max-width: 34rem; }
-  video { width: 100%; aspect-ratio: 9 / 16; border-radius: 20px; background: #000; display: block; box-shadow: 0 24px 60px -24px rgba(0, 0, 0, .8); border: 1px solid var(--line); }
-  .spec { color: var(--muted); font-size: 13.5px; margin-top: 12px; text-align: center; }
-  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin: 36px 0 12px; font-weight: 600; }
-  .downloads { display: flex; flex-wrap: wrap; gap: 10px; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; background: rgba(255, 255, 255, .03); cursor: pointer; }
-  .btn.primary { background: var(--gold); color: #1a1406; border-color: transparent; }
-  .btn:hover { border-color: rgba(243, 234, 217, .4); }
-  .btn.primary:hover { filter: brightness(1.06); }
-  .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-  .btn svg { width: 18px; height: 18px; }
-  .caption { position: relative; border: 1px solid var(--line); border-radius: 16px; padding: 20px 20px 16px; background: rgba(255, 255, 255, .025); }
-  .caption pre { margin: 0; white-space: pre-wrap; font: inherit; }
-  .caption .btn { margin-top: 16px; font-size: 14px; padding: 8px 14px; }
-  .alt { color: var(--muted); font-size: 14.5px; }
-  .source { color: var(--muted); font-size: 14px; margin-top: 36px; border-top: 1px solid var(--line); padding-top: 16px; }
-  .source a, .alt a { color: var(--ink); }
-  @media (max-width: 760px) { main { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 28px; } .player { max-width: 360px; margin: 0 auto; width: 100%; } }
+  body { margin: 0; color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  button, input, select { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ---------- top bar */
+  header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 20px; padding: 14px var(--pad);
+    background: linear-gradient(#0b0b0f 0%, rgba(11, 11, 15, .92) 70%, rgba(11, 11, 15, 0)); }
+  .brand { font-weight: 900; letter-spacing: .02em; font-size: 22px; text-decoration: none; white-space: nowrap; }
+  .brand span { color: var(--accent); }
+  .chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 6px 12px; cursor: pointer; white-space: nowrap; color: var(--muted); font-size: 14px; }
+  .chip[aria-pressed="true"] { background: var(--ink); color: #0b0b0f; border-color: var(--ink); font-weight: 600; }
+  .tools { display: flex; gap: 8px; align-items: center; }
+  .search { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; width: clamp(140px, 18vw, 240px); }
+  .search::placeholder { color: var(--dim); }
+  select { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; }
+
+  /* ---------- billboard */
+  .billboard { position: relative; margin: 0 var(--pad) 8px; border-radius: 18px; overflow: hidden; background: var(--panel);
+    display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); min-height: clamp(360px, 52vh, 560px); }
+  .bb-copy { position: relative; z-index: 2; padding: clamp(24px, 5vw, 64px); display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; }
+  .bb-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: blur(40px) saturate(1.2); opacity: .35; transform: scale(1.2); }
+  .bb-copy::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--panel) 30%, rgba(22, 22, 28, .4)); z-index: -1; }
+  .eyebrow { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .bb-title { font-size: clamp(30px, 4.2vw, 58px); line-height: 1.02; letter-spacing: -.025em; margin: 0; font-weight: 900; max-width: 14ch; }
+  .bb-hook { color: var(--muted); max-width: 44ch; margin: 0; font-size: 16.5px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--dim); font-size: 13.5px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+  .badge.ready { background: var(--accent); color: var(--accent-ink); }
+  .badge.posted { background: var(--ok); color: #05210f; }
+  .badge.draft { background: var(--panel-2); color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 8px; border: 0; cursor: pointer; font-weight: 700; text-decoration: none; font-size: 15px; transition: transform .15s var(--ease), background .15s; }
+  .btn:active { transform: scale(.97); }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn.play { background: var(--ink); color: #0b0b0f; }
+  .btn.alt { background: rgba(244, 241, 234, .14); color: var(--ink); }
+  .btn.alt:hover { background: rgba(244, 241, 234, .22); }
+  .btn.gold { background: var(--accent); color: var(--accent-ink); }
+  .btn.small { padding: 8px 12px; font-size: 14px; border-radius: 7px; }
+  .bb-media { position: relative; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .bb-media video, .bb-media img { height: min(100%, 500px); max-height: 500px; aspect-ratio: 9 / 16; width: auto; border-radius: 14px; object-fit: cover; background: #000; border: 1px solid var(--line); }
+
+  /* ---------- rows */
+  main { padding-bottom: 64px; }
+  .row { margin-top: 26px; }
+  .row h2 { margin: 0 var(--pad) 10px; font-size: 19px; font-weight: 800; display: flex; align-items: baseline; gap: 10px; }
+  .row h2 small { color: var(--dim); font-weight: 500; font-size: 13px; }
+  .rail-wrap { position: relative; }
+  .rail { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(132px, 15vw, 196px); gap: 10px; overflow-x: auto; padding: 8px var(--pad) 18px;
+    scroll-snap-type: x mandatory; scroll-padding: 0 var(--pad); scrollbar-width: none; }
+  .rail::-webkit-scrollbar { display: none; }
+  .arrow { position: absolute; top: 8px; bottom: 18px; width: calc(var(--pad) - 4px); min-width: 34px; border: 0; background: rgba(11, 11, 15, .7); cursor: pointer; z-index: 3; opacity: 0; transition: opacity .2s; display: flex; align-items: center; justify-content: center; }
+  .arrow svg { width: 26px; height: 26px; }
+  .arrow.l { left: 0; } .arrow.r { right: 0; }
+  .rail-wrap:hover .arrow, .arrow:focus-visible { opacity: 1; }
+  @media (hover: none) { .arrow { display: none; } }
+  .card { position: relative; scroll-snap-align: start; aspect-ratio: 9 / 16; border-radius: var(--radius); overflow: hidden; background: var(--panel); cursor: pointer; border: 0; padding: 0; text-align: left;
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+  .card img, .card video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .card video { opacity: 0; transition: opacity .3s; }
+  .card.previewing video { opacity: 1; }
+  .card .info { position: absolute; inset: auto 0 0 0; padding: 30px 10px 10px; background: linear-gradient(transparent, rgba(0, 0, 0, .88)); }
+  .card .t { font-weight: 800; font-size: 14px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .card .m { color: var(--muted); font-size: 12px; margin-top: 4px; display: flex; gap: 6px; align-items: center; }
+  .card .badge { position: absolute; top: 8px; left: 8px; }
+  @media (hover: hover) { .card:hover { transform: scale(1.06); box-shadow: 0 18px 40px -12px rgba(0, 0, 0, .9); z-index: 2; } }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; padding: 8px var(--pad); }
+  .empty { padding: 40px var(--pad); color: var(--muted); }
+
+  /* ---------- detail */
+  dialog { width: min(980px, 100vw - 24px); max-height: calc(100dvh - 24px); padding: 0; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); color: var(--ink); overflow: auto; }
+  dialog::backdrop { background: rgba(0, 0, 0, .75); }
+  .d-grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); }
+  .d-player { background: #000; align-self: stretch; }
+  .d-player video { position: sticky; top: 0; }   /* stays in view while the details scroll */
+  .d-player video { width: 100%; aspect-ratio: 9 / 16; display: block; background: #000; }
+  .d-body { padding: 26px 26px 30px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .d-body h3 { margin: 0; font-size: 28px; line-height: 1.1; letter-spacing: -.02em; font-weight: 900; }
+  .d-top { position: sticky; top: 0; height: 0; z-index: 5; display: flex; justify-content: flex-end; }   /* zero height: takes no width from the content */
+  .close { margin: 10px 10px 0 0; flex: none; width: 38px; height: 38px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, .6); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .close svg { width: 20px; height: 20px; }
+  .sect { border-top: 1px solid var(--line); padding-top: 14px; }
+  .sect h4 { margin: 0 0 10px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); font-weight: 700; }
+  .caption { white-space: pre-wrap; background: var(--panel-2); border-radius: 10px; padding: 14px; margin: 0; font: inherit; font-size: 14.5px; max-height: 220px; overflow: auto; }
+  .row-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+  .note { color: var(--dim); font-size: 13px; margin: 8px 0 0; }
+  .alt { color: var(--muted); font-size: 14px; margin: 0; }
+  .posted-list { margin: 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+  .toast { position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 30px); background: var(--ink); color: #0b0b0f; padding: 10px 16px; border-radius: 10px; font-weight: 600;
+    opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s var(--ease); z-index: 100; max-width: calc(100vw - 32px); }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 760px) {
+    header { flex-wrap: wrap; gap: 10px; }
+    .chips { order: 3; flex-basis: 100%; }
+    .billboard { grid-template-columns: minmax(0, 1fr); }
+    .bb-media { padding: 0 24px 24px; }
+    .bb-media video, .bb-media img { height: auto; width: min(62vw, 260px); }
+    .d-grid { grid-template-columns: minmax(0, 1fr); }
+    .d-player video { max-height: 70dvh; width: auto; margin: 0 auto; }
+    dialog { margin: 0; width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; border-radius: 0; border: 0; }
+    .d-player { display: flex; justify-content: center; }
+    .d-player video { position: static; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
+<header>
+  <a class="brand" href="#" id="brand">FACT<span>REELS</span></a>
+  <nav class="chips" id="chips" aria-label="Topics"></nav>
+  <div class="tools">
+    <label class="sr" for="q">Search reels</label>
+    <input class="search" id="q" type="search" placeholder="Search" autocomplete="off">
+    <label class="sr" for="sort">Sort</label>
+    <select id="sort">
+      <option value="new">Newest</option>
+      <option value="old">Oldest</option>
+      <option value="short">Shortest</option>
+      <option value="az">A–Z</option>
+    </select>
+  </div>
+</header>
+
 <main>
-  <div class="player">
-    <video src="output/venus-reel.mp4" poster="output/thumbnail.jpg" controls playsinline preload="metadata"></video>
-    <p class="spec">1080 × 1920 · 30 fps · 19 s · H.264 + AAC · −14 LUFS</p>
-  </div>
-  <div>
-    <h1>A day on Venus is longer than its year</h1>
-    <p class="lede">A 19-second vertical explainer, ready for Instagram Reels. The 3D is built in Blender, the voice-over comes from Chatterbox, and the captions are timed with faster-whisper.</p>
-
-    <h2>Download</h2>
-    <div class="downloads">
-      <a class="btn primary" href="output/venus-reel.mp4" download="venus-reel.mp4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Video (MP4, 9.7 MB)</a>
-      <a class="btn" href="output/thumbnail.jpg" download="venus-reel-thumbnail.jpg">Thumbnail (Reel cover)</a>
-      <a class="btn" href="output/thumbnail-grid-3x4.jpg" download="venus-reel-thumbnail-grid.jpg">Thumbnail (3:4 grid)</a>
-      <a class="btn" href="output/caption.txt" download="venus-reel-caption.txt">Caption (TXT)</a>
-      <a class="btn" href="output/captions.srt" download="venus-reel-captions.srt">Captions (SRT)</a>
-    </div>
-
-    <h2>Caption</h2>
-    <div class="caption">
-      <pre id="caption">A day on Venus is longer than its year. 🪐
-
-Venus turns so slowly that one spin on its axis takes about 243 Earth days. One trip around the Sun takes only about 225.
-
-And it spins backwards. If you could see through its thick clouds, you'd watch the Sun rise in the west and set in the east.
-
-Which fact got you: the day or the sunrise? 👇
-
-Follow for more facts that sound fake but aren't.
-
-Source: NASA Science, Venus facts.
-
-#space #venus #sciencefacts #astronomy #didyouknow</pre>
-      <button class="btn" type="button" id="copy">Copy caption</button>
-    </div>
-
-    <h2>Alt text</h2>
-    <p class="alt">A 3D-animated Venus with swirling pale-yellow clouds turns slowly in space, then is shown orbiting a glowing Sun before the Sun rises over its edge. Bold captions read “1 day &gt; 1 year?”, “1 spin = 243 days”, “1 orbit = 225 days” and “Sunrise: west”.</p>
-
-    <p class="source">Facts checked against <a href="https://science.nasa.gov/venus/venus-facts/">NASA Science: Venus facts</a>. All files are also attached to the <a href="https://github.com/LorneH12/venus-fact-reel/releases/latest">latest GitHub release</a>, and the source is in the <a href="https://github.com/LorneH12/venus-fact-reel">repository</a>.</p>
-  </div>
+  <section class="billboard" id="billboard" aria-label="Featured reel"></section>
+  <div id="rows"></div>
 </main>
+
+<dialog id="detail" aria-labelledby="d-title"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
-  const btn = document.getElementById('copy');
-  btn.addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(document.getElementById('caption').textContent); btn.textContent = 'Copied'; }
-    catch { btn.textContent = 'Select the text to copy'; }
-    setTimeout(() => (btn.textContent = 'Copy caption'), 1800);
+const ICON = {
+  play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>',
+  info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5" stroke-linecap="round"/></svg>',
+  down: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>',
+  share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M7 8l5-5 5 5M5 14v6h14v-6"/></svg>',
+  copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>',
+  bolt: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
+  x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+  l: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
+  r: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
+};
+// where each platform's own upload page lives (manual publishing)
+const PLATFORMS = [
+  { id: 'instagram', name: 'Instagram', upload: 'https://www.instagram.com/' },
+  { id: 'tiktok', name: 'TikTok', upload: 'https://www.tiktok.com/upload' },
+  { id: 'youtube', name: 'YouTube Shorts', upload: 'https://studio.youtube.com/' },
+];
+const AUTO = ['instagram'];   // platforms the hub's GitHub Action can post to (see tools/publish.py)
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let CAT = null, state = { topic: 'All', q: '', sort: 'new' };
+
+const url = (r, key) => r.files?.[key] ? new URL(r.files[key], new URL(r.base || './', location.href)).href : null;
+const fullCaption = r => (r.caption || '') + (r.hashtags?.length ? '\n\n' + r.hashtags.map(t => '#' + t.replace(/^#/, '')).join(' ') : '');
+const fmtDate = d => d ? new Date(d + 'T12:00:00').toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+const status = r => r.posted && Object.keys(r.posted).length ? 'posted' : (r.status || 'ready');
+const badge = r => { const s = status(r); return `<span class="badge ${s}">${s === 'posted' ? 'Posted' : s === 'draft' ? 'Draft' : 'Ready'}</span>`; };
+
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600); }
+async function copy(text, what = 'Caption') {
+  try { await navigator.clipboard.writeText(text); toast(`${what} copied`); return true; }
+  catch { toast('Copy blocked: select the text and copy it'); return false; }
+}
+function download(href, name) { const a = document.createElement('a'); a.href = href; a.download = name || ''; document.body.append(a); a.click(); a.remove(); }
+
+function sorted(list) {
+  const by = { new: (a, b) => (b.date || '').localeCompare(a.date || ''), old: (a, b) => (a.date || '').localeCompare(b.date || ''),
+    short: (a, b) => (a.duration_s || 0) - (b.duration_s || 0), az: (a, b) => a.title.localeCompare(b.title) }[state.sort];
+  return [...list].sort(by);
+}
+function matches(r) {
+  if (state.topic !== 'All' && r.category !== state.topic) return false;
+  if (!state.q) return true;
+  const hay = [r.title, r.hook, r.category, r.caption, ...(r.hashtags || [])].join(' ').toLowerCase();
+  return state.q.toLowerCase().split(/\s+/).every(w => hay.includes(w));
+}
+
+// ---------- render
+function renderChips() {
+  const topics = ['All', ...new Set(CAT.reels.map(r => r.category).filter(Boolean))];
+  $('#chips').innerHTML = topics.map(t => `<button class="chip" type="button" aria-pressed="${t === state.topic}" data-topic="${esc(t)}">${esc(t)}</button>`).join('');
+}
+function renderBillboard(list) {
+  const r = sorted(list.filter(x => status(x) !== 'draft'))[0] || list[0];
+  const el = $('#billboard');
+  if (!r) { el.hidden = true; return; }
+  el.hidden = false;
+  el.innerHTML = `
+    <div class="bb-bg" style="background-image:url('${esc(url(r, 'thumbnail'))}')"></div>
+    <div class="bb-copy">
+      <div class="eyebrow">Featured · ${esc(r.category || 'Fact reel')}</div>
+      <h1 class="bb-title">${esc(r.title)}</h1>
+      <p class="bb-hook">${esc(r.hook || '')}</p>
+      <div class="meta">${badge(r)}<span>${esc(fmtDate(r.date))}</span><span>${Math.round(r.duration_s || 0)} s</span><span>1080 × 1920</span></div>
+      <div class="actions">
+        <button class="btn play" type="button" data-open="${esc(r.slug)}" data-autoplay="1">${ICON.play}Play</button>
+        <button class="btn alt" type="button" data-open="${esc(r.slug)}">${ICON.info}Details &amp; publish</button>
+        <a class="btn alt" href="${esc(url(r, 'video'))}" download="${esc(r.slug)}.mp4">${ICON.down}Download</a>
+      </div>
+    </div>
+    <div class="bb-media">
+      <video src="${esc(url(r, 'video'))}" poster="${esc(url(r, 'thumbnail'))}" muted loop playsinline preload="metadata" aria-label="Preview of ${esc(r.title)}"></video>
+    </div>`;
+  const v = el.querySelector('video');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) v.play().catch(() => {});
+}
+function card(r) {
+  return `<button class="card" type="button" data-open="${esc(r.slug)}" data-preview="${esc(url(r, 'video'))}" aria-label="${esc(r.title)}, ${Math.round(r.duration_s || 0)} seconds, ${status(r)}">
+    <img src="${esc(url(r, 'thumbnail'))}" alt="" loading="lazy" decoding="async">
+    ${badge(r)}
+    <span class="info"><span class="t">${esc(r.title)}</span><span class="m">${Math.round(r.duration_s || 0)} s · ${esc(r.category || '')}</span></span>
+  </button>`;
+}
+function row(title, list, sub = '') {
+  if (!list.length) return '';
+  const id = 'r' + Math.random().toString(36).slice(2, 8);
+  return `<section class="row" aria-labelledby="${id}"><h2 id="${id}">${esc(title)} <small>${sub || list.length}</small></h2>
+    <div class="rail-wrap"><button class="arrow l" type="button" aria-label="Scroll ${esc(title)} left" data-scroll="-1">${ICON.l}</button>
+    <div class="rail">${list.map(card).join('')}</div>
+    <button class="arrow r" type="button" aria-label="Scroll ${esc(title)} right" data-scroll="1">${ICON.r}</button></div></section>`;
+}
+function render() {
+  const list = CAT.reels.filter(matches);
+  renderChips();
+  if (state.q) {
+    $('#billboard').hidden = true;
+    $('#rows').innerHTML = list.length
+      ? `<section class="row"><h2>Results for “${esc(state.q)}” <small>${list.length}</small></h2><div class="grid">${sorted(list).map(card).join('')}</div></section>`
+      : `<p class="empty">No reels match “${esc(state.q)}”. Try a topic, a hashtag or a word from the caption.</p>`;
+    return;
+  }
+  renderBillboard(list);
+  const cats = [...new Set(list.map(r => r.category).filter(Boolean))];
+  $('#rows').innerHTML = [
+    row('New', sorted(list)),
+    row('Ready to post', sorted(list.filter(r => status(r) === 'ready'))),
+    row('Posted', sorted(list.filter(r => status(r) === 'posted'))),
+    // a row per topic once it has 2+ reels (the topic chips filter everything anyway)
+    ...(state.topic === 'All' ? cats.map(c => list.filter(r => r.category === c)).filter(g => g.length > 1).map(g => row(g[0].category, sorted(g))) : []),
+    row('Drafts', sorted(list.filter(r => status(r) === 'draft'))),
+  ].join('') || '<p class="empty">No reels yet.</p>';
+}
+
+// ---------- detail, download and publish
+function publishIssueUrl(r, platform) {
+  const repo = CAT.hub_repo; if (!repo) return null;
+  const body = [`slug: ${r.slug}`, `platform: ${platform}`, '',
+    'Submitting this issue is the go-ahead: the hub\'s GitHub Action posts this reel with the caption below.',
+    'Only issues opened by the repository owner are acted on. Close the issue without submitting to cancel.', '', '---', '', fullCaption(r)].join('\n');
+  return `https://github.com/${repo}/issues/new?` + new URLSearchParams({ title: `publish: ${r.slug} to ${platform}`, labels: 'publish', body });
+}
+function openDetail(slug, autoplay) {
+  const r = CAT.reels.find(x => x.slug === slug); if (!r) return;
+  const d = $('#detail'), cap = fullCaption(r), posted = r.posted || {};
+  const files = [['video', 'Video (MP4)', `${r.slug}.mp4`], ['thumbnail', 'Thumbnail', `${r.slug}-thumbnail.jpg`], ['grid', 'Thumbnail 3:4', `${r.slug}-grid.jpg`],
+    ['caption', 'Caption (TXT)', `${r.slug}-caption.txt`], ['srt', 'Captions (SRT)', `${r.slug}.srt`]].filter(([k]) => r.files?.[k]);
+  d.innerHTML = `
+    <div class="d-top"><button class="close" type="button" aria-label="Close" data-close>${ICON.x}</button></div>
+    <div class="d-grid">
+      <div class="d-player"><video src="${esc(url(r, 'video'))}" poster="${esc(url(r, 'thumbnail'))}" controls playsinline preload="metadata"></video></div>
+      <div class="d-body">
+        <div class="eyebrow">${esc(r.category || 'Fact reel')}</div>
+        <h3 id="d-title">${esc(r.title)}</h3>
+        <div class="meta">${badge(r)}<span>${esc(fmtDate(r.date))}</span><span>${Math.round(r.duration_s || 0)} s</span><span>1080 × 1920 · H.264 · −14 LUFS</span></div>
+
+        <div class="sect"><h4>Download</h4><div class="row-btns">
+          ${files.map(([k, label, name], i) => `<a class="btn small ${i ? 'alt' : 'gold'}" href="${esc(url(r, k))}" download="${esc(name)}">${i ? '' : ICON.down}${esc(label)}</a>`).join('')}
+        </div></div>
+
+        <div class="sect"><h4>Publish manually</h4><div class="row-btns">
+          <button class="btn small gold" type="button" data-share="${esc(r.slug)}">${ICON.share}Share to app</button>
+          ${PLATFORMS.map(p => `<button class="btn small alt" type="button" data-manual="${p.id}" data-slug="${esc(r.slug)}">${esc(p.name)}</button>`).join('')}
+        </div>
+        <p class="note">On a phone, <b>Share to app</b> sends the video straight to Instagram, TikTok or YouTube, with the caption already copied. On a computer, a platform button copies the caption, downloads the video and opens that platform's upload page.</p></div>
+
+        ${CAT.hub_repo ? `<div class="sect"><h4>Publish automatically</h4><div class="row-btns">
+          ${AUTO.map(p => posted[p] ? `<a class="btn small alt" href="${esc(posted[p].url)}" target="_blank" rel="noopener">View on ${esc(PLATFORMS.find(x => x.id === p).name)}</a>`
+            : `<a class="btn small gold" href="${esc(publishIssueUrl(r, p))}" target="_blank" rel="noopener">${ICON.bolt}Post to ${esc(PLATFORMS.find(x => x.id === p).name)}</a>`).join('')}
+        </div>
+        <p class="note">This opens a pre-filled publish request on GitHub. Submitting it is your go-ahead: the hub's GitHub Action posts the Reel through the platform's official API and marks it Posted here. Nothing is posted until you submit.</p></div>` : ''}
+
+        <div class="sect"><h4>Caption</h4><pre class="caption">${esc(cap)}</pre>
+          <div class="row-btns" style="margin-top:10px"><button class="btn small alt" type="button" data-copy="caption">${ICON.copy}Copy caption</button>
+          <button class="btn small alt" type="button" data-copy="alt">${ICON.copy}Copy alt text</button></div></div>
+
+        ${Object.keys(posted).length ? `<div class="sect"><h4>Posted</h4><ul class="posted-list">${Object.entries(posted).map(([p, v]) =>
+          `<li><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(p)}</a>${v.date ? ' · ' + esc(fmtDate(v.date)) : ''}</li>`).join('')}</ul></div>` : ''}
+
+        <div class="sect"><h4>Alt text</h4><p class="alt">${esc(r.alt_text || '')}</p></div>
+        ${r.sources?.length ? `<div class="sect"><h4>Sources</h4><p class="alt">${r.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p></div>` : ''}
+        ${r.repo ? `<p class="note"><a href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">Source repository</a></p>` : ''}
+      </div>
+    </div>`;
+  d._reel = r;
+  d.showModal();
+  history.replaceState(null, '', '#reel=' + encodeURIComponent(r.slug));
+  if (autoplay) d.querySelector('video').play().catch(() => {});
+}
+async function shareToApp(r) {
+  await copy(fullCaption(r));
+  try {
+    const blob = await (await fetch(url(r, 'video'))).blob();
+    const file = new File([blob], `${r.slug}.mp4`, { type: 'video/mp4' });
+    if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: r.title, text: fullCaption(r) }); return; }
+  } catch (e) { if (e.name === 'AbortError') return; }
+  toast('This browser can\'t share files. Use a platform button instead, or open the page on your phone.');
+}
+async function manual(r, pid) {
+  const p = PLATFORMS.find(x => x.id === pid);
+  await copy(fullCaption(r));
+  download(url(r, 'video'), `${r.slug}.mp4`);
+  if (r.files?.thumbnail) setTimeout(() => download(url(r, 'thumbnail'), `${r.slug}-cover.jpg`), 400);
+  setTimeout(() => window.open(p.upload, '_blank', 'noopener'), 700);
+  toast(`Caption copied, video downloading. Opening ${p.name}…`);
+}
+
+// ---------- events
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-open],[data-close],[data-share],[data-manual],[data-copy],[data-scroll],[data-topic]');
+  if (!t) return;
+  const d = $('#detail');
+  if (t.dataset.open) openDetail(t.dataset.open, t.dataset.autoplay);
+  else if ('close' in t.dataset) d.close();
+  else if (t.dataset.share) shareToApp(d._reel);
+  else if (t.dataset.manual) manual(d._reel, t.dataset.manual);
+  else if (t.dataset.copy) copy(t.dataset.copy === 'alt' ? d._reel.alt_text : fullCaption(d._reel), t.dataset.copy === 'alt' ? 'Alt text' : 'Caption');
+  else if (t.dataset.scroll) { const rail = t.parentElement.querySelector('.rail'); rail.scrollBy({ left: Number(t.dataset.scroll) * rail.clientWidth * .85, behavior: 'smooth' }); }
+  else if (t.dataset.topic) { state.topic = t.dataset.topic; render(); }
+});
+$('#detail').addEventListener('close', () => { $('#detail').querySelector('video')?.pause(); history.replaceState(null, '', location.pathname + location.search); });
+$('#detail').addEventListener('click', e => { if (e.target === $('#detail')) $('#detail').close(); });   // click on the backdrop
+$('#q').addEventListener('input', e => { state.q = e.target.value.trim(); render(); });
+$('#sort').addEventListener('change', e => { state.sort = e.target.value; render(); });
+$('#brand').addEventListener('click', e => { e.preventDefault(); state = { ...state, topic: 'All', q: '' }; $('#q').value = ''; render(); scrollTo({ top: 0 }); });
+// hover preview on desktop: start muted playback after a short dwell, like a streaming catalogue
+if (matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let timer;
+  document.addEventListener('pointerover', e => {
+    const c = e.target.closest('.card'); if (!c || c.contains(e.relatedTarget)) return;
+    timer = setTimeout(() => {
+      if (!c.dataset.preview || c.querySelector('video')) return;
+      const v = Object.assign(document.createElement('video'), { src: c.dataset.preview, muted: true, loop: true, playsInline: true, preload: 'auto' });
+      c.prepend(v); v.play().then(() => c.classList.add('previewing')).catch(() => {});
+    }, 550);
   });
+  document.addEventListener('pointerout', e => {
+    const c = e.target.closest('.card'); if (!c || c.contains(e.relatedTarget)) return;
+    clearTimeout(timer); c.classList.remove('previewing'); c.querySelector('video')?.remove();
+  });
+}
+
+fetch('catalog.json', { cache: 'no-store' }).then(r => r.json()).then(c => {
+  CAT = c; document.title = c.site_title || 'Fact Reels';
+  if (c.site_title) $('#brand').innerHTML = esc(c.site_title.split(' ')[0].toUpperCase()) + '<span>' + esc((c.site_title.split(' ')[1] || '').toUpperCase()) + '</span>';
+  render();
+  const m = location.hash.match(/reel=([^&]+)/); if (m) openDetail(decodeURIComponent(m[1]));
+}).catch(() => { $('#rows').innerHTML = '<p class="empty">Could not load catalog.json.</p>'; });
 </script>
 </body>
 </html>
